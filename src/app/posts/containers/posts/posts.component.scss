@@ -1,0 +1,24 @@
+$mobile-size: 800px;
+.parent-container{
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    height: calc(100vh - 80px);
+}
+md-sidenav {
+  width: 320px;
+}
+
+.detail-container {
+  padding: 12px;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  height: calc(100vh - 80px);
+}
+
+
+@media all and (max-width: $mobile-size) {
+  md-sidenav{
+      width: 100vw;
+  }
+}

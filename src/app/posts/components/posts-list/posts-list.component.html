@@ -1,0 +1,10 @@
+<md-nav-list>
+  <ng-template ngFor let-post [ngForOf]='posts'>
+    <!-- <a  routerLinkActive="active"> -->
+    <md-list-item [routerLink]="[post.id]" routerLinkActive="active"> 
+      <span>{{post?. title}}</span>
+    </md-list-item>
+    <md-divider></md-divider>
+  <!-- </a> -->
+  </ng-template>
+</md-nav-list>
