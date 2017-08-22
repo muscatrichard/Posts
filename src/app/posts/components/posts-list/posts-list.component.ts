@@ -9,4 +9,5 @@ import { Post } from '../../models/post';
 
 export class PostsListComponent {
   @Input() posts: Post[];
+  @Input() isPostSelected: boolean;
 }

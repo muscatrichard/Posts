@@ -1,7 +1,7 @@
-<md-sidenav-container class="parent-container">
-  <md-sidenav mode="side" opened>
-    <app-posts-list [posts]="posts$ | async"></app-posts-list>
-  </md-sidenav>
+<md-sidenav-container class="parent-container" >
+ 
+    <app-posts-list [posts]="posts$ | async" [isPostSelected]= "isPostSelected$ | async"></app-posts-list>
+  
   <div class="detail-container">
     <router-outlet></router-outlet>
   </div>

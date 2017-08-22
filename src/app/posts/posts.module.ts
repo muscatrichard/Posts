@@ -14,7 +14,7 @@ import { PostsEffects } from './effects/posts';
 import { SharedModule } from '../shared/shared.module';
 import { PostComponent } from './components/post/post.component';
 import { PostDetailContainerComponent } from './containers/post-detail-container/post-detail-container.component';
-import { PostExistsGuard } from './guards/post-exists';
+// import { PostExistsGuard } from './guards/post-exists';
 
 @NgModule({
   imports: [
@@ -25,7 +25,6 @@ import { PostExistsGuard } from './guards/post-exists';
     StoreModule.forFeature('posts', reducers),
     EffectsModule.forFeature([PostsEffects])
   ],
-  declarations: [PostsListComponent, PostDetailComponent, PostsComponent, PostComponent, PostDetailContainerComponent],
-  providers: [PostExistsGuard]
+  declarations: [PostsListComponent, PostDetailComponent, PostsComponent, PostComponent, PostDetailContainerComponent]
 })
 export class PostsModule { }

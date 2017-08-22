@@ -1,3 +1,24 @@
-.active {
-    color:green;
+$mobile-size: 800px;
+
+md-sidenav {
+  width: 320px;
 }
+
+.mat-list-item {
+    font-size: 14px;
+    padding: 10px;
+}
+
+.active {
+    font-weight: 600;
+}
+
+@media all and (max-width: $mobile-size) {
+  md-sidenav{
+      width: 100vw;
+  }
+  md-sidenav.hide-on-mobile{
+      display: none;
+  }
+}
+

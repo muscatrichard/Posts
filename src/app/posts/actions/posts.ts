@@ -5,6 +5,8 @@ export const LOAD = '[Posts] Load';
 export const LOAD_SUCCESS = '[Posts] Load Success';
 export const LOAD_FAIL = '[Posts] Load Fail';
 export const SELECT = '[Posts] Select';
+export const DESELECT = '[Posts] Deselect';
+
 
 export class LoadAction implements Action {
   readonly type = LOAD;
@@ -28,8 +30,13 @@ export class SelectAction implements Action {
   constructor(public payload: string) {}
 }
 
+export class DeselectAction implements Action {
+  readonly type = DESELECT;
+}
+
 export type Actions =
   | LoadAction
   | LoadSuccessAction
   | LoadFailAction
-  | SelectAction;
+  | SelectAction
+  | DeselectAction;

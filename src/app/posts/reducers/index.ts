@@ -31,6 +31,11 @@ export const getSelectedPost = createSelector(
     fromPosts.getSelectedPost
 );
 
+export const getIsPostSelected = createSelector(
+    getPostEntitiesState,
+    fromPosts.getIsPostSelected
+);
+
 export const getPostsLoading = createSelector(
     getPostEntitiesState,
     fromPosts.getLoading

@@ -13,14 +13,14 @@ import * as posts from '../../actions/posts';
 export class PostDetailContainerComponent implements OnDestroy {
   actionsSubscription: Subscription;
 
-  constructor(store: Store<fromPosts.State>, route: ActivatedRoute) { 
-    // console.log('postdetailcontainer');
-     this.actionsSubscription = route.params.subscribe(params => store.dispatch(new posts.SelectAction(params.postId)));
-    // this.actionsSubscription = route.params.map(params => new posts.SelectAction(params.postId))
-    // .subscribe(store);
+  constructor(private store: Store<fromPosts.State>, route: ActivatedRoute) {
+    this.actionsSubscription = route.params.subscribe(params =>
+      store.dispatch(new posts.SelectAction(params.postId))
+    );
   }
 
   ngOnDestroy() {
     this.actionsSubscription.unsubscribe();
+    this.store.dispatch(new posts.DeselectAction())
   }
 }

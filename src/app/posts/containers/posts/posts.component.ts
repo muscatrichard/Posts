@@ -4,6 +4,7 @@ import { Post } from '../../models/post';
 import * as fromPosts from '../../reducers';
 import * as posts from '../../actions/posts';
 import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -12,9 +13,11 @@ import { Store } from '@ngrx/store';
 })
 export class PostsComponent implements OnInit {
 
-  posts$: Observable<Post[]>
+  posts$: Observable<Post[]>;
+  isPostSelected$: Observable<boolean>;
   constructor(private store: Store<fromPosts.State>) {
     this.posts$ = store.select(fromPosts.getPosts);
+    this.isPostSelected$ = store.select(fromPosts.getIsPostSelected);
   }
 
   ngOnInit() {

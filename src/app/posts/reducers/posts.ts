@@ -6,14 +6,14 @@ export interface State {
     loaded: boolean;
     loading: boolean;
     posts: Post[];
-    selectedPost: Post;
+    selectedPostId: string;
 }
 
 export const initialState: State = {
     loaded: false,
     loading: false,
     posts: [],
-    selectedPost: null
+    selectedPostId: null
 }
 
 export function reducer(state = initialState, action: posts.Actions): State {
@@ -37,9 +37,13 @@ export function reducer(state = initialState, action: posts.Actions): State {
             return initialState;
         }
         case posts.SELECT: {
-            const selected: Post = _.first( _.filter(state.posts, {id: +(action.payload)}));
             return Object.assign({},state,{
-                selectedPost: selected
+                selectedPostId: action.payload
+            })
+        }
+        case posts.DESELECT: {
+            return Object.assign({},state,{
+                selectedPostId: null
             })
         }
         default: {
@@ -52,4 +56,5 @@ export function reducer(state = initialState, action: posts.Actions): State {
 export const getLoaded = (state: State) => state.loaded;
 export const getLoading = (state: State) => state.loading;
 export const getPosts = (state: State) => state.posts;
-export const getSelectedPost = (state: State) => state.selectedPost;
+export const getSelectedPost = (state: State) =>  _.first( _.filter(state.posts, {id: +(state.selectedPostId)}));
+export const getIsPostSelected = (state: State) => !!state.selectedPostId;

@@ -1,7 +1,18 @@
 <div *ngIf="post">
-<h1>HEllo</h1>
-{{post.title}}
-{{post.body}}
-{{post.userId}}
-{{post.id}}
+    <md-card class='post-content'>
+        <div class="back-button">     
+            <a md-raised-button routerLink="../">Back</a>
+        </div>
+        <div class="content">
+            <md-card-subtitle>
+                User ID: {{post.userId}}
+            </md-card-subtitle>
+            <md-card-subtitle>
+                Post ID: {{post.id}}
+            </md-card-subtitle>
+            <md-card-content>
+                {{post.body}}
+            </md-card-content>
+        </div>
+    </md-card>
 </div>

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import * as fromPosts from '../../reducers';
 import { Post } from '../../models/post';
 import { Observable } from 'rxjs/Observable';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 
 
@@ -19,5 +19,4 @@ export class PostDetailComponent {
   constructor(private store: Store<fromPosts.State>) {
     this.post$ = store.select(fromPosts.getSelectedPost);
   }
-
 }

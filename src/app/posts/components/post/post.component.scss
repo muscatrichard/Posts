@@ -1,0 +1,25 @@
+$mobile-size: 800px;
+.post-content{
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    width: calc(100vw - 320px);
+    height: calc(100vw - 80px) !important;
+}
+
+.content{
+    padding: 20px;
+}
+.back-button {
+    display: none;
+}
+
+@media all and (max-width: $mobile-size) {
+    .post-content{
+        width: 100%;
+    }
+
+    .back-button {
+        display: inline;
+        padding-bottom: 50px;
+    }
+  }
