@@ -3,7 +3,7 @@ $mobile-size: 800px;
     flex: 1 1 100%;
     box-sizing: border-box;
     width: calc(100vw - 320px);
-    height: calc(100vw - 80px) !important;
+    height: calc(100vh - 80px);
 }
 
 .content{
